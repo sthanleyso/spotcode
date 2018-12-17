@@ -1,0 +1,44 @@
+<section class="section has-text-white">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  <div class="container is-fluid">
+    <h2 class="is-size-4 has-text-bold-light has-text-centered">Cadastrar-se</h2><br>
+    <div class="field">
+      <p class="control has-icons-left">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-medium is-primary is-focused", type: "email", placeholder: "Email" %>
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+      </p>
+      <p class="help">Digite um email válido</p>
+    </div>
+
+    <div class="field">
+      <div class="control has-icons-left">
+        <%= f.password_field :password, autocomplete: "new-password", class: "input is-medium is-primary", type: "password", placeholder: "Senha" %>
+        <span class="icon is-small is-left">
+          <i class="fas fa-lock"></i>
+        </span>
+        <% if @minimum_password_length %>
+        <p class="help">Digite uma senha <em>(No mínimo <%= @minimum_password_length %> caracteres)</em></p>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control has-icons-left">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input is-medium is-primary", type: "password", placeholder: "Confirmar senha" %>
+        <span class="icon is-small is-left">
+          <i class="fas fa-lock"></i>
+        </span>
+        <p class="help">Confirme sua senha</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Cadastrar", class: "button is-primary" %>
+    </div>
+  </div>
+<% end %>
+  <%= render "devise/shared/links" %>
+</section>

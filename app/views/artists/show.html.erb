@@ -5,10 +5,13 @@
       <p class="is-size-6 has-text-weight-semibold"><%= @artist.name %></p>
     </div>
   </div>
+  <div class="container is-2-mobile is-1-desktop has-text-centered favorite">
+    <%= favorite_button(@artist) %>
+  </div>
 
   <br />
 
-  <h2 class="is-size-5 has-text-weight-bold">Albums</h2>
+  <h2 class="is-size-5 has-text-weight-bold has-text-centered">Álbums</h2>
 
   <br />
 

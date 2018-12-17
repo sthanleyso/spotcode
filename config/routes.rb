@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user/index'
   get 'recently_heards/create'
   devise_for :users
   
@@ -14,6 +15,14 @@ Rails.application.routes.draw do
     resources :songs, only: [] do
       post "/favorite", to: "favorites#create", on: :member, defaults: { format: :js, favoritable_type: 'Song' }
       delete "/favorite", to: "favorites#destroy", on: :member, defaults: { format: :js, favoritable_type: 'Song' }
+    end
+    resources :albums, only: [] do
+      post "/favorite", to: "favorites#create", on: :member, defaults: { format: :js, favoritable_type: 'Album' }
+      delete "/favorite", to: "favorites#destroy", on: :member, defaults: { format: :js, favoritable_type: 'Album' }
+    end
+    resources :artists, only: [] do
+      post "/favorite", to: "favorites#create", on: :member, defaults: { format: :js, favoritable_type: 'Artist' }
+      delete "/favorite", to: "favorites#destroy", on: :member, defaults: { format: :js, favoritable_type: 'Artist' }
     end
   end
 
