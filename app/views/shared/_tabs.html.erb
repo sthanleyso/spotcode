@@ -1,20 +1,29 @@
-<div class="tabs is-medium is-centered shared">
+<div class="tabs is-small is-centered shared">
   <ul>
     <% if albums %>
       <li class="is-active">
-        <a target="#albums">Álbums</a>
+        <a target="#albums">
+          <span class="icon is-small"><i class="fas fa-compact-disc" aria-hidden="true"></i></span>
+          <span>Álbums</span>
+        </a>
       </li>
     <% end %>
 
     <% if artists %>
       <li>
-        <a target="#artists">Artistas</a>
+        <a target="#artists">
+          <span class="icon is-small"><i class="fas fa-user-circle" aria-hidden="true"></i></span>
+          <span>Artistas</span>
+        </a>
       </li>
     <% end %>
 
     <% if songs %>
       <li>
-        <a target="#songs">Músicas</a>
+        <a target="#songs">
+          <span class="icon is-small"><i class="fas fa-music" aria-hidden="true"></i></span>
+          <span>Músicas</span>
+        </a>
       </li>
     <% end %>
   </ul>
